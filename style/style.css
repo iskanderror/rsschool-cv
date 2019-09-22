@@ -1,0 +1,53 @@
+body {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 0;
+
+  font-size: 100%;
+  font-family: "Georgia", serif;
+  color:#000000;
+  
+  background: #ffffff;  
+}
+
+header h1 {
+  font-size: 2.5em;
+  line-height: 20%;
+  text-decoration: underline;
+}
+
+header h2 {
+  font-size: 1em;
+  line-height: 20%;
+}
+
+.title-section h1 {
+  font-family: "Georgia", serif;
+  font-style: italic;
+  font-size: 1.5em;
+  line-height: 75%;
+  color: #000000;
+}
+
+section {
+  border-bottom: #dedede solid 1px;
+}
+
+pre,
+code {
+  font-family: "Courier New", "Courier", monospace;
+  text-align: start;
+  color: #0000ff;
+}
+
+.grid-header {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1.5fr 5.5fr 3fr
+  
+}
+
+.contact-details {
+  line-height: 50%;
+  text-align: end; 
+}
