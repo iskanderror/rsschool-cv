@@ -10,26 +10,23 @@ body {
     background: #ffffff;
 }
   
-h1 {
-    font-size: 2em;
+header h1 {
+    font-size: 2.5em;
+    line-height: 20%;
+    text-decoration: underline;
 }
 
-h2 {
-    font-size: 1.2em;
-    font-style: italic;
+header h2 {
+    font-size: 1em;
+    line-height: 20%;
 }
 
 .sectionTitle h1 {
     font-family: "Georgia", serif;
     font-style: italic;
     font-size: 1.5em;
+    line-height: 75%;
     color: #000000;
-}
-
-p {
-    margin-bottom: 1em;
-
-    font-size: 1em;   
 }
 
 section {
@@ -41,4 +38,16 @@ code {
     font-family: "Courier New", "Courier", monospace;
     text-align: start;
     color: #0000ff;
+}
+
+.headerGrid {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1.5fr 5.5fr 3fr
+    
+}
+
+.contactDetails {
+    line-height: 50%;
+    text-align: end; 
 }
