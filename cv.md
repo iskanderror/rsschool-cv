@@ -16,6 +16,66 @@ in oil and gas industry. Rapid development of cloud platforms drives me to impro
 * Databases: MS SQL Server
 * Programming: C#, HTML, CSS
 
+##Code Examples
+
+This example is written in Control (Simatic WinCC OA built-in language, similar with C++)
+
+``` c++
+/* Main class for Parameter-Value table */
+class DataTable
+{
+  protected dyn_string parameterDps;
+  protected dyn_langString  parameterDescriptions;
+  protected mixed values = makeDynMixed();
+  protected dyn_string foreColorValues;
+  protected dyn_string backColorValues;
+  protected int count;
+  protected shape parentPanel;
+
+  /** Fill class data with information.
+    @param dpNameList - initial data for parameterDps array
+    @param panelShape - panel, where data will be displayed.
+  */
+  public int init(dyn_string dpNameList, shape panelShape=0)
+  {
+    clearData();
+    parentPanel = panelShape;
+    int dpNameListLen = dynlen(dpNameList);
+    for(int i=1; i<= dpNameListLen; i++)
+    {
+      string dpName = dpNameList[i];
+      string query = buildDataQuery(dpName);
+      dyn_dyn_anytype tab;
+      dpQuery(query,tab);
+      count = fillArrays(tab);
+    }
+    reloadPanel();
+    return count;
+  }
+
+  /** Make subscription on parameterDps  */
+  public void subscribe()
+  {
+    for(int i=1; i<= count; i++)
+    {
+      string dpName = parameterDps[i];
+      string query = buildSubscriptionQuery(dpName);
+      dpQueryConnectSingle("updateArraysCB",false, "", query);
+    }
+  }
+
+  /** Write new values of into the database
+    @param parameterDpsList - list of Dps to dpSet() command
+    @param newValues - new values of dps in parameterDpsList
+  */
+  public int applyChanges(dyn_string parameterDpsList, dyn_anytype newValues)
+  {
+    return 0;// override this in the derived class
+  }
+/*... some additional code here ...*/
+}; 
+```
+
 ##Experience
 My current responsibilities as head of SCADA development department at NGP Inform are management of the SCADA development team.
 
