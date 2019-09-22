@@ -1,87 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Aleksandr Nekrytov - CV</title>
     <link href="./style/style.css" rel="stylesheet">
-</head>
-<body>
+  </head>
+
+  <body>
     <header>
-        <div class="headerGrid">
-            <div>
-                <img src="./img/portrait.png" alt="cat" width="100%">
-            </div>
-            <div>
-                <h1>Aleksandr Nekrytov</h1>
-                <h2>Junior frontend developer</h2>
-            </div>
-            <div class="contactDetails">
-                <p>
-                    <a href="tel:+79174553278">+7 (917) 455-32-78</a>
-                </p>
-                <p>
-                    <a href="mailto:iskanderror@gmail.com" target="_blank">iskanderror@gmail.com</a>
-                </p>
-            </div>
+      <div class="grid-header">
+        <div>
+          <img src="./img/portrait.png" alt="cat" width="100%">
         </div>
+        <div>
+          <h1>Aleksandr Nekrytov</h1>
+          <h2>Junior frontend developer</h2>
+        </div>
+        <div class="contact-details">
+          <p>
+            <a href="tel:+79174553278">+7 (917) 455-32-78</a>
+          </p>
+          <p>
+            <a href="mailto:iskanderror@gmail.com" target="_blank">iskanderror@gmail.com</a>
+          </p>
+        </div>
+      </div>
     </header>
+
     <main>
-        <section>
-            <article>
-                <div class="sectionTitle">
-                    <h1>Personal Information</h1>
-                </div>
-                <ul>
-                    <li>Age: 28</li>
-                    <li>Location: Ufa</li>
-                </ul>
-            </article>
-        </section>
+      <section>
+        <article>
+          <div class="title-section">
+            <h1>Personal Information</h1>
+          </div>
+          <ul>
+            <li>Age: 28</li>
+            <li>Location: Ufa</li>
+          </ul>
+        </article>
+      </section>
 
-        <section>
-            <article>
-                <div class="sectionTitle">
-                    <h1>Summary</h1>
-                </div>
-                <p class="summaryText">
-                    Currently I am working as SCADA developer. 
-                    I developed and implemented many of automation systems in oil and gas industry. 
-                    <br>Rapid development of cloud platforms drives me to improve my frontend development skills.
-                </p>
-            </article>
-        </section>
+      <section>
+        <article>
+          <div class="title-section">
+            <h1>Summary</h1>
+          </div>
+          <p class="summaryText">
+            Currently I am working as SCADA developer. 
+            I developed and implemented many of automation systems in oil and gas industry. 
+            <br>Rapid development of cloud platforms drives me to improve my frontend development skills.
+          </p>
+        </article>
+      </section>
 
-        <section>
-            <article>
-                <div class="sectionTitle">
-                    <h1>Skills</h1>
-                </div>
-                <p>
-                    <ul>
-                        <li>PLC programming and SCADA development (mostly Schneider Electric & Siemens solutions)</li>
-                        <li>Databases: MS SQL Server</li>
-                        <li>Programming: C#, HTML, CSS</li>
-                    </ul>
-                </p>
-            </article>
-        </section>
+      <section>
+        <article>
+          <div class="title-section">
+            <h1>Skills</h1>
+          </div>
+          <p>
+            <ul>
+              <li>PLC programming and SCADA development (mostly Schneider Electric & Siemens solutions)</li>
+              <li>Databases: MS SQL Server</li>
+              <li>Programming: C#, HTML, CSS</li>
+            </ul>
+          </p>
+        </article>
+      </section>
 
-        <section>
-            <article>
-                <div class="sectionTitle">
-                    <h1>Code examples</h1>
-                </div>
-                <p>
-                    <details> 
-                        <summary>This example is written in Control (Simatic WinCC OA built-in language, similar with C++)</summary>
-                        <pre>
-                            <code>
-/* Main class for Parameter-Value table */
-class DataTable
-{
+      <section>
+        <article>
+          <div class="title-section">
+            <h1>Code examples</h1>
+          </div>
+          <p>
+            <details> 
+              <summary>This example is written in Control (Simatic WinCC OA built-in language, similar with C++)</summary>
+              <pre>
+                <code>
+  /* Main class for Parameter-Value table */
+  class DataTable
+  {
     protected dyn_string parameterDps;
-    protected dyn_langString  parameterDescriptions;
+    protected dyn_langString parameterDescriptions;
     protected mixed values = makeDynMixed();
     protected dyn_string foreColorValues;
     protected dyn_string backColorValues;
@@ -99,24 +101,24 @@ class DataTable
     int dpNameListLen = dynlen(dpNameList);
     for(int i=1; i<= dpNameListLen; i++)
     {
-        string dpName = dpNameList[i];
-        string query = buildDataQuery(dpName);
-        dyn_dyn_anytype tab;
-        dpQuery(query,tab);
-        count = fillArrays(tab);
+      string dpName = dpNameList[i];
+      string query = buildDataQuery(dpName);
+      dyn_dyn_anytype tab;
+      dpQuery(query,tab);
+      count = fillArrays(tab);
     }
     reloadPanel();
     return count;
     }
 
-    /** Make subscription on parameterDps  */
+    /** Make subscription on parameterDps */
     public void subscribe()
     {
     for(int i=1; i<= count; i++)
     {
-        string dpName = parameterDps[i];
-        string query = buildSubscriptionQuery(dpName);
-        dpQueryConnectSingle("updateArraysCB",false, "", query);
+      string dpName = parameterDps[i];
+      string query = buildSubscriptionQuery(dpName);
+      dpQueryConnectSingle("updateArraysCB",false, "", query);
     }
     }
 
@@ -128,75 +130,72 @@ class DataTable
     {
     return 0;// override this in the derived class
     }
-/*... some additional code here ...*/
-};
-                            </code>
-                        </pre>
-                    </details>
-                </p>
-            </article>
-        </section>
+  /*... some additional code here ...*/
+  };
+                </code>
+              </pre>
+            </details>
+          </p>
+        </article>
+      </section>
 
-        <section>
-            <article>
-                <div class="sectionTitle">
-                    <h1>Experience</h1>
-                </div>
-                <p>
-                    My current responsibilities as head of SCADA development department 
-                    at NGP Inform are management of the SCADA development team.
-                </p>
-                <p>
-                    My previous experience is available at 
-                    <a href="https://www.linkedin.com/in/aleksandr-nekrytov-68607b123/" target="_blank">LinkedIn</a>
-                </p>
-            </article>
-        </section>
+      <section>
+        <article>
+          <div class="title-section">
+            <h1>Experience</h1>
+          </div>
+          <p>
+            My current responsibilities as head of SCADA development department 
+            at NGP Inform are management of the SCADA development team.
+          </p>
+          <p>
+            My previous experience is available at 
+            <a href="https://www.linkedin.com/in/aleksandr-nekrytov-68607b123/" target="_blank">LinkedIn</a>
+          </p>
+        </article>
+      </section>
 
-        <section>
-            <article>
-                <div class="sectionTitle">
-                    <h1>Education</h1>
-                </div>
-                <ul>
-                    <li>
-                        2019 - HTML Academy (<a href="https://htmlacademy.ru/profile/id1042307" target="_blank">Profile</a>)
-                    </li>
-                    <li> 
-                        2018 - Simatic PCS7 course
-                    </li>
-                    <li>
-                        2017 - Wonderware Application Developer Certification
-                    </li>
-                    <li>
-                        2016 - Schneider Electric PlantStruXure Certified Expert
-                    </li>
-                    <li>
-                        2014 - Genesis64 Advanced AnalytiX course
-                    </li>
-                    <li>
-                        2007-2012 - Ufa State Aviation Technical University, Engineer's degree, Applied Mathematics
-                    </li>
-                </ul>
-            </article>
-        </section>
+      <section>
+        <article>
+          <div class="title-section">
+            <h1>Education</h1>
+          </div>
+          <ul>
+            <li>
+              2019 - HTML Academy (<a href="https://htmlacademy.ru/profile/id1042307" target="_blank">Profile</a>)
+            </li>
+            <li> 
+              2018 - Simatic PCS7 course
+            </li>
+            <li>
+              2017 - Wonderware Application Developer Certification
+            </li>
+            <li>
+              2016 - Schneider Electric PlantStruXure Certified Expert
+            </li>
+            <li>
+              2014 - Genesis64 Advanced AnalytiX course
+            </li>
+            <li>
+              2007-2012 - Ufa State Aviation Technical University, Engineer's degree, Applied Mathematics
+            </li>
+          </ul>
+        </article>
+      </section>
 
-        <section>
-            <article>
-                <div class="sectionTitle">
-                    <h1>English</h1>
-                </div>
-                <p>
-                    Pre-Intermediate (A2)
-                </p>
-            </article>
-        </section>
+      <section>
+        <article>
+          <div class="title-section">
+            <h1>English</h1>
+          </div>
+          <p>
+            Pre-Intermediate (A2)
+          </p>
+        </article>
+      </section>
     </main>
 
     <footer>
-        <div class="centerFooter">
-            
-        </div>
     </footer>
-</body>
+  </body>
 </html>
