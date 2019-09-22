@@ -1,2 +1,2 @@
 # rsschool-cv
-My CV for Rolling-Scopes-School
+[https://iskanderror.github.io/rsschool-cv/cv](https://iskanderror.github.io/rsschool-cv/cv "My CV for the Rolling-Scopes School")
