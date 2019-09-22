@@ -1,22 +1,27 @@
-#Junior Frontend Developer
+# Junior Frontend Developer
+
 ---
-##Contact details
+
+## Contact details
+
 * Name: **Aleksandr Nekrytov**
 * Age: **28**
 * Location: **Ufa**
 * Phone: **+7 (917) 455-32-78**
 * E-mail: **iskanderror@gmail.com**
 
-##Summary
+## Summary
+
 Currently I am working as SCADA developer. I developed and implemented many of automation systems 
 in oil and gas industry. Rapid development of cloud platforms drives me to improve my frontend development skills.
 
-##Skills
+## Skills
+
 * PLC programming and SCADA development (mostly Schneider Electric & Siemens solutions)
 * Databases: MS SQL Server
 * Programming: C#, HTML, CSS
 
-##Code Examples
+## Code Examples
 
 This example is written in Control (Simatic WinCC OA built-in language, similar with C++)
 
@@ -73,15 +78,17 @@ class DataTable
     return 0;// override this in the derived class
   }
 /*... some additional code here ...*/
-}; 
+};
 ```
 
-##Experience
+## Experience
+
 My current responsibilities as head of SCADA development department at NGP Inform are management of the SCADA development team.
 
 My previous experience is available at [LinkedIn](https://www.linkedin.com/in/aleksandr-nekrytov-68607b123/ "Aleksandr Nekrytov")
 
-##Education
+## Education
+
 * 2019 - HTML Academy ([Profile](https://htmlacademy.ru/profile/id1042307 "Aleksandr Nekrytov"))
 * 2018 - Simatic PCS7 course
 * 2017 - Wonderware Application Developer
@@ -89,5 +96,6 @@ My previous experience is available at [LinkedIn](https://www.linkedin.com/in/al
 * 2014 - Genesis64 Advanced AnalytiX course
 * 2007-2012 - Ufa State Aviation Technical University, Engineer's degree, Applied Mathematics
 
-##English
+## English
+
 Pre-Intermediate (A2)
